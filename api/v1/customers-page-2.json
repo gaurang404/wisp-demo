@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": 7,
+      "name": "Ethan Brooks",
+      "email": "ethan.brooks@example.com",
+      "plan": "subscriber",
+      "address": {
+        "city": "Portland",
+        "country": "US"
+      },
+      "orders_count": 15,
+      "created_at": "2026-08-17T09:17:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Nora Lindqvist",
+      "email": "nora.lindqvist@example.com",
+      "plan": "subscriber",
+      "address": {
+        "city": "Gothenburg",
+        "country": "SE"
+      },
+      "orders_count": 6,
+      "created_at": "2026-09-18T09:18:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Diego Herrera",
+      "email": "diego.herrera@example.com",
+      "plan": "one-off",
+      "address": {
+        "city": "Valencia",
+        "country": "ES"
+      },
+      "orders_count": 1,
+      "created_at": "2026-01-19T09:19:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Chloe Martin",
+      "email": "chloe.martin@example.com",
+      "plan": "wholesale",
+      "address": {
+        "city": "Montréal",
+        "country": "CA"
+      },
+      "orders_count": 27,
+      "created_at": "2026-02-10T09:20:00Z"
+    }
+  ],
+  "links": {
+    "next": null
+  },
+  "meta": {
+    "current_page": 2,
+    "last_page": 2,
+    "per_page": 6,
+    "total": 10
+  }
+}

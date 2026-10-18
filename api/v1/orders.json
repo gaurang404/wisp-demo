@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "id": "ord_1042",
+      "customer_id": 1,
+      "status": "shipped",
+      "items": [
+        {
+          "product_id": "cof_ethiopia",
+          "quantity": 2
+        }
+      ],
+      "total": {
+        "amount": 3300,
+        "currency": "EUR"
+      },
+      "placed_at": "2026-10-14T08:21:00Z"
+    },
+    {
+      "id": "ord_1043",
+      "customer_id": 5,
+      "status": "processing",
+      "items": [
+        {
+          "product_id": "cof_espresso",
+          "quantity": 10
+        },
+        {
+          "product_id": "cof_brazil",
+          "quantity": 5
+        }
+      ],
+      "total": {
+        "amount": 19750,
+        "currency": "EUR"
+      },
+      "placed_at": "2026-10-15T11:02:00Z"
+    },
+    {
+      "id": "ord_1044",
+      "customer_id": 2,
+      "status": "delivered",
+      "items": [
+        {
+          "product_id": "cof_colombia",
+          "quantity": 1
+        }
+      ],
+      "total": {
+        "amount": 1450,
+        "currency": "EUR"
+      },
+      "placed_at": "2026-10-16T16:45:00Z"
+    }
+  ]
+}

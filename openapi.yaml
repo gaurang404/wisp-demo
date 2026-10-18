@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: Wisp Coffee API
+  version: 1.0.0
+  description: |
+    A fictional coffee roaster's API, used to demo [Wisp](https://github.com/gaurang404/wisp).
+    Responses are static JSON served from GitHub Pages, so every request returns the same sample data.
+servers:
+  - url: https://gaurang404.github.io/wisp-demo/api/v1
+security:
+  - apiKey: []
+tags:
+  - name: Customers
+  - name: Products
+  - name: Orders
+  - name: Account
+paths:
+  /customers.json:
+    get:
+      tags: [Customers]
+      summary: List customers
+      description: Paginated. Follow `links.next` for the next page.
+      operationId: listCustomers
+      responses:
+        '200':
+          description: A page of customers.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CustomerPage' }
+  /customers/{id}.json:
+    get:
+      tags: [Customers]
+      summary: Get a customer
+      operationId: getCustomer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer, example: 1 }
+      responses:
+        '200':
+          description: The customer.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { $ref: '#/components/schemas/Customer' }
+  /products.json:
+    get:
+      tags: [Products]
+      summary: List products
+      operationId: listProducts
+      responses:
+        '200':
+          description: All coffees.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Product' } }
+  /orders.json:
+    get:
+      tags: [Orders]
+      summary: List orders
+      operationId: listOrders
+      responses:
+        '200':
+          description: Recent orders.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Order' } }
+    post:
+      tags: [Orders]
+      summary: Create an order
+      description: Static demo — GitHub Pages doesn't accept POST, so this returns 405. Use it to try code generation.
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              customer_id: 1
+              items:
+                - product_id: cof_ethiopia
+                  quantity: 2
+              shipping: express
+      responses:
+        '201':
+          description: The created order.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Order' }
+  /account.json:
+    get:
+      tags: [Account]
+      summary: Account details
+      operationId: getAccount
+      responses:
+        '200':
+          description: The API account.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: { $ref: '#/components/schemas/Account' }
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+  schemas:
+    Money:
+      type: object
+      properties:
+        amount: { type: integer, description: Minor units (cents), example: 1650 }
+        currency: { type: string, example: EUR }
+    Customer:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: Maya Okafor }
+        email: { type: string, format: email, example: maya.okafor@example.com }
+        plan: { type: string, enum: [subscriber, one-off, wholesale] }
+        address:
+          type: object
+          properties:
+            city: { type: string, example: Lisbon }
+            country: { type: string, example: PT }
+        orders_count: { type: integer, example: 12 }
+        created_at: { type: string, format: date-time }
+    CustomerPage:
+      type: object
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/Customer' } }
+        links:
+          type: object
+          properties:
+            next: { type: string, nullable: true }
+        meta:
+          type: object
+          properties:
+            current_page: { type: integer }
+            last_page: { type: integer }
+            per_page: { type: integer }
+            total: { type: integer }
+    Product:
+      type: object
+      properties:
+        id: { type: string, example: cof_ethiopia }
+        name: { type: string, example: Ethiopia Guji }
+        origin: { type: string, example: 'Guji, Ethiopia' }
+        roast: { type: string, enum: [light, medium, medium-dark, dark] }
+        notes: { type: array, items: { type: string }, example: [jasmine, peach] }
+        price: { $ref: '#/components/schemas/Money' }
+        in_stock: { type: boolean }
+    Order:
+      type: object
+      properties:
+        id: { type: string, example: ord_1042 }
+        customer_id: { type: integer, example: 1 }
+        status: { type: string, enum: [processing, shipped, delivered] }
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              product_id: { type: string }
+              quantity: { type: integer }
+        total: { $ref: '#/components/schemas/Money' }
+        placed_at: { type: string, format: date-time }
+    Account:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        plan: { type: string }
+        api_version: { type: string }

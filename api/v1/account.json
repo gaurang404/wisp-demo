@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "acct_7f3c",
+    "name": "Wisp Coffee Roasters",
+    "plan": "pro",
+    "api_version": "2026-10",
+    "rate_limit": {
+      "limit": 1000,
+      "remaining": 994
+    }
+  }
+}

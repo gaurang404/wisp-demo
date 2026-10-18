@@ -1,0 +1,85 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Maya Okafor",
+      "email": "maya.okafor@example.com",
+      "plan": "subscriber",
+      "address": {
+        "city": "Lisbon",
+        "country": "PT"
+      },
+      "orders_count": 12,
+      "created_at": "2026-02-11T09:11:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Jonas Weber",
+      "email": "jonas.weber@example.com",
+      "plan": "subscriber",
+      "address": {
+        "city": "Berlin",
+        "country": "DE"
+      },
+      "orders_count": 3,
+      "created_at": "2026-03-12T09:12:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Aiko Tanaka",
+      "email": "aiko.tanaka@example.com",
+      "plan": "one-off",
+      "address": {
+        "city": "Osaka",
+        "country": "JP"
+      },
+      "orders_count": 1,
+      "created_at": "2026-04-13T09:13:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Lucas Moreau",
+      "email": "lucas.moreau@example.com",
+      "plan": "subscriber",
+      "address": {
+        "city": "Lyon",
+        "country": "FR"
+      },
+      "orders_count": 8,
+      "created_at": "2026-05-14T09:14:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Priya Raman",
+      "email": "priya.raman@example.com",
+      "plan": "wholesale",
+      "address": {
+        "city": "Bengaluru",
+        "country": "IN"
+      },
+      "orders_count": 40,
+      "created_at": "2026-06-15T09:15:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Sofia Rossi",
+      "email": "sofia.rossi@example.com",
+      "plan": "one-off",
+      "address": {
+        "city": "Milan",
+        "country": "IT"
+      },
+      "orders_count": 2,
+      "created_at": "2026-07-16T09:16:00Z"
+    }
+  ],
+  "links": {
+    "next": "https://gaurang404.github.io/wisp-demo/api/v1/customers-page-2.json"
+  },
+  "meta": {
+    "current_page": 1,
+    "last_page": 2,
+    "per_page": 6,
+    "total": 10
+  }
+}

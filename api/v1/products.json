@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "id": "cof_ethiopia",
+      "name": "Ethiopia Guji",
+      "origin": "Guji, Ethiopia",
+      "roast": "light",
+      "notes": [
+        "jasmine",
+        "peach",
+        "bergamot"
+      ],
+      "price": {
+        "amount": 1650,
+        "currency": "EUR"
+      },
+      "in_stock": true
+    },
+    {
+      "id": "cof_colombia",
+      "name": "Colombia Huila",
+      "origin": "Huila, Colombia",
+      "roast": "medium",
+      "notes": [
+        "red apple",
+        "panela",
+        "cocoa"
+      ],
+      "price": {
+        "amount": 1450,
+        "currency": "EUR"
+      },
+      "in_stock": true
+    },
+    {
+      "id": "cof_kenya",
+      "name": "Kenya Nyeri AA",
+      "origin": "Nyeri, Kenya",
+      "roast": "light",
+      "notes": [
+        "blackcurrant",
+        "grapefruit"
+      ],
+      "price": {
+        "amount": 1890,
+        "currency": "EUR"
+      },
+      "in_stock": false
+    },
+    {
+      "id": "cof_brazil",
+      "name": "Brazil Cerrado",
+      "origin": "Cerrado Mineiro, Brazil",
+      "roast": "medium-dark",
+      "notes": [
+        "hazelnut",
+        "milk chocolate"
+      ],
+      "price": {
+        "amount": 1250,
+        "currency": "EUR"
+      },
+      "in_stock": true
+    },
+    {
+      "id": "cof_espresso",
+      "name": "House Espresso",
+      "origin": "Blend",
+      "roast": "medium",
+      "notes": [
+        "caramel",
+        "dark cherry"
+      ],
+      "price": {
+        "amount": 1350,
+        "currency": "EUR"
+      },
+      "in_stock": true
+    }
+  ]
+}
